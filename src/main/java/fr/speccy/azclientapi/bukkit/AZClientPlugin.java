@@ -20,6 +20,7 @@ public final class AZClientPlugin extends JavaPlugin {
         getCommand("scale").setExecutor(new Commands());
         getCommand("worldenv").setExecutor(new Commands());
         getCommand("plsp").setExecutor(new Commands());
+        getCommand("testpop").setExecutor(new Commands());
     }
 
     @Override

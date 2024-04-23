@@ -1,10 +1,12 @@
 package fr.speccy.azclientapi.bukkit.fork.commands;
 
+import fr.speccy.azclientapi.bukkit.fork.popup.PopupManager;
 import fr.speccy.azclientapi.bukkit.handlers.PLSPConfFlag;
 import fr.speccy.azclientapi.bukkit.handlers.PLSPWorldEnv;
 import fr.speccy.azclientapi.bukkit.packets.PacketConfFlag;
 import fr.speccy.azclientapi.bukkit.packets.PacketEntityMeta;
 import fr.speccy.azclientapi.bukkit.packets.PacketWorldEnv;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,6 +15,9 @@ import org.bukkit.entity.Player;
 public class Commands implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command c, String l, String[] args) {
+        if(l.equalsIgnoreCase("testpop")){
+            PopupManager.create(1, "§6Test", Material.AIR, new String[]{"fezf"});
+        }
         if(l.equalsIgnoreCase("scale")){
             if (!(sender instanceof Player)) {
                 sender.sendMessage("Cette commande est réservée aux joueurs !");
